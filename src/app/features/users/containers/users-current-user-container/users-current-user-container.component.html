@@ -1,0 +1,4 @@
+<app-users-current-user-edit [userData$]="usersCurrentUserFacade.getData$() | async"
+	[userData]="usersCurrentUserFacade.getData()" [loading$]="usersCurrentUserFacade.loading$() | async "
+	(formSubmit)="editCurrentUser($event)">
+</app-users-current-user-edit>

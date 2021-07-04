@@ -1,0 +1,18 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo,
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.logo > mat-icon,
+.user > mat-icon {
+  margin-right: 5px;
+}
+
+button {
+  margin-left: 5px;
+}

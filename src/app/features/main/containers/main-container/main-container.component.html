@@ -1,0 +1,18 @@
+<app-main-header [userData$]="usersCurrentUserFacade.getData$() | async" (toggleMenu)="toggleMenu()"></app-main-header>
+<mat-progress-bar mode="indeterminate" *ngIf="usersCurrentUserFacade.loading$() | async"></mat-progress-bar>
+<mat-sidenav-container mode=push>
+	<mat-sidenav #sidenav>
+		<mat-nav-list>
+			<a mat-list-item [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+				(click)="toggleMenu()">Edit User</a>
+			<a mat-list-item [routerLink]="['', 'about']" routerLinkActive="active" (click)="toggleMenu()">About
+				GeRx</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<div class="main-container">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>
+<app-main-footer></app-main-footer>

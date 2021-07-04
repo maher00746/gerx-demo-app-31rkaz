@@ -1,0 +1,12 @@
+<mat-toolbar>
+	<span class="logo" *ngIf="userData$">
+    <mat-icon>{{userData$?.organization?.logo}}</mat-icon> 
+    <span class="orhName">{{userData$?.organization?.name}}</span>
+	</span>
+	<button mat-icon-button (click)="onToggleMenu()"><mat-icon>menu</mat-icon></button>
+	<span class="spacer"></span>
+	<span class="user" *ngIf="userData$">
+    <mat-icon>{{userData$?.photo}}</mat-icon>
+    <span>Hello, {{userData$?.fullName}}</span>
+	</span>
+</mat-toolbar>

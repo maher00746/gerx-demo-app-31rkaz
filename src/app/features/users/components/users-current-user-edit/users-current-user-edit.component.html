@@ -1,0 +1,54 @@
+<mat-card>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
+		<mat-form-field>
+			<mat-label>Full Name</mat-label>
+			<input matInput formControlName="fullName">
+    </mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Photo</mat-label>
+				<mat-select formControlName="photo">
+					<mat-select-trigger>
+						<mat-icon>{{form?.get('photo')?.value}}</mat-icon>
+						{{form?.get('photo')?.value}}
+					</mat-select-trigger>
+					<mat-option value="face">
+						<mat-icon>face</mat-icon>face
+					</mat-option>
+					<mat-option value="sentiment_satisfied_alt">
+						<mat-icon>sentiment_satisfied_alt</mat-icon>sentiment_satisfied_alt
+					</mat-option>
+					<mat-option value="account_circle">
+						<mat-icon>account_circle</mat-icon>account_circle
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<ng-container formGroupName="organization">
+				<mat-form-field>
+					<mat-label>Organization Name</mat-label>
+					<input matInput formControlName="name">
+    </mat-form-field>
+
+					<mat-form-field>
+						<mat-label>Organization Logo</mat-label>
+						<mat-select formControlName="logo">
+							<mat-select-trigger>
+								<mat-icon>{{form?.get('organization')?.get('logo')?.value}}</mat-icon>
+								{{form?.get('organization')?.get('logo')?.value}}
+							</mat-select-trigger>
+							<mat-option value="alarm_on">
+								<mat-icon>alarm_on</mat-icon>alarm_on
+							</mat-option>
+							<mat-option value="api">
+								<mat-icon>api</mat-icon>api
+							</mat-option>
+							<mat-option value="flutter_dash">
+								<mat-icon>flutter_dash</mat-icon>flutter_dash
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+			</ng-container>
+			<button mat-raised-button color="primary" [disabled]="loading$">Submit</button>
+	</form>
+</mat-card>

@@ -1,0 +1,15 @@
+.main-container {
+  padding: 20px;
+}
+
+mat-sidenav-container {
+  height: calc(100% - 128px);
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+.active {
+  color: blue;
+}
